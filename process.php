@@ -10,6 +10,36 @@
 	$ch = new Curl();
 	//***End of CURL********//
 
+	//***Start of Add User********//
+	if(isset($_POST['add']))
+	{
+		extract($_POST);
+		$hostName = $_SESSION['url'];
+
+		$post = array(
+
+			'name' => $name;
+			'email' => $email;
+		);
+
+		$result = $ch->post($hostName.'/insert_user.php',$post);
+		//***Start of Check Status*******//
+		if($result->status == 1)
+		{
+			$_SESSION['success'] = $result->message;
+			
+		}else
+		{
+			$_SESSION['error'] = $result->message;
+			
+		}
+		//***End of Check Status******//
+
+		header('location:index.php');
+
+	}
+	//**End of Add User**********//
+
 
 	//***Start of Delete User*******//
 	if(isset($_GET['id']) && $_GET['delete'] == 'true')

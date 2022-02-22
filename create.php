@@ -27,7 +27,11 @@
 
 				<div class="form-group m-2">
 					<label>Email Address</label>
-					<input type="text" name="name" placeholder="Enter your name" required class="form-control">
+					<input type="email" name="email" placeholder="Enter your email address" required class="form-control">
+				</div>
+
+				<div class="form-group m-2">
+					<button type="submit" name="add" class="btn btn-dark">Add User</button>
 				</div>
 
 			</form>

@@ -34,17 +34,12 @@
 		die;
 	}
 
-	if(!isset($_POST['password']))
-	{
-		echo json_encode(array("message"=>"Password is required!","status"=>false));
-		die;
-	}
 	//**End of Getting Data*****//
 
 
 	//**Start of Get Users*******//
 	extract($_POST);
-	$query  = "INSERT INTO `users` (`name`,`email`,`password`) VALUES ('$name','$email','$password')";
+	$query  = "INSERT INTO `users` (`name`,`email`) VALUES ('$name','$email')";
 	$result = $db->executeQuery($query);
 	//**End of Get Users******//
 

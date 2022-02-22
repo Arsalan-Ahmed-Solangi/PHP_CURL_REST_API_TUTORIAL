@@ -53,7 +53,7 @@
 						//**End of Deconding JSON*******//
 
 						//**Start of Show Records*******//
-						if($result->status == 1)
+						if(count($result) > 0)
 						{
 
 
@@ -67,7 +67,7 @@
 									<td><?= $value->name ?></td>
 									<td><?= $value->email ?></td>
 									<td>
-										<a class="btn btn-dark" href="process.php?id=<?=$value->user_id?>&edit=true">Edit</a>
+										<!-- <a class="btn btn-dark" href="process.php?id=<?=$value->user_id?>&edit=true">Edit</a> -->
 
 										<a class="btn btn-danger" href="process.php?id=<?=$value->user_id?>&delete=true">Delete</a>
 									</td>
